@@ -1,5 +1,5 @@
-# Docos项目文档
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+# Xuperos项目文档
+This website is built using [Docusaurus 2](https://github.com/facebook/docusaurus), a modern static website generator.
 
 ### Installation
 
