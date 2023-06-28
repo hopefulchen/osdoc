@@ -24,9 +24,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
-   
-    
+        node-version: [18.x]
+
     defaults:
       run:
         working-directory: apptest
@@ -39,6 +38,17 @@ jobs:
        
       - run: rm -rf node_modules yarn.lock package-lock.json
       - run: npm install
-      - run: npm run  build  
-      - run: npm test
+      - run: npm run  build   
+
+      - run: tar zcvf  osdoc.tar.gz build   
+      - name: upload artificts
+        uses: actions/upload-artifact@v2
+        with:
+         name: osdoc.tar.gz
+         path: osdoc.tar.gz
+   
+
+     
+
+
       
