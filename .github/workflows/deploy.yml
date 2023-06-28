@@ -44,15 +44,10 @@ jobs:
 
      
       - run: tar zcvf  osdoc.tar.gz build 
-      - run: readlink -f osdoc.tar.gz
-
-      - uses: svenstaro/upload-release-action@v2
-        id: release 
+      - run: readlink -f osdoc.tar.gz 
+        
+      - name: upload artificts
+        uses: actions/upload-artifact@v2
         with:
-           token: ${{ secrets.GITHUB_TOKEN }}
-           file: osdoc.tar.gz
-           tag: ${{ github.ref }}
-           release_name: ${{ github.ref }}
-           overwrite: true
-           file_glob: true
-           body: ""
+         name: osdoc.tar.gz
+         path: osdoc.tar.gz
