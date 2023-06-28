@@ -53,7 +53,7 @@ jobs:
         id: release
         with:
            token: ${{ secrets.GITHUB_TOKEN }}
-           file:  ./osdoc.tar.gz
+           file: osdoc.tar.gz
            tag: ${{ github.ref }}
            release_name: ${{ github.ref }}
            overwrite: true
