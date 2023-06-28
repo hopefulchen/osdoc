@@ -44,6 +44,7 @@ jobs:
 
      
       - run: tar zcvf  osdoc.tar.gz build 
+      - run: readlink -f osdoc.tar.gz
 
       - uses: svenstaro/upload-release-action@v2
         id: release 
