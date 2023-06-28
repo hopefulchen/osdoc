@@ -42,15 +42,11 @@ jobs:
       - run: npm install
       - run: npm run  build   
 
-      - run: tar zcvf  osdoc.tar.gz build   
-      - name: upload artificts
-        uses: actions/upload-artifact@v2
-        with:
-         name: osdoc.tar.gz
-         path: osdoc.tar.gz
-      
+     
+      - run: tar zcvf  osdoc.tar.gz build 
+
       - uses: svenstaro/upload-release-action@v2
-        id: release
+        id: release 
         with:
            token: ${{ secrets.GITHUB_TOKEN }}
            file: osdoc.tar.gz
