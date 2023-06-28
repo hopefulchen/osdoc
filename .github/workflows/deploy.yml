@@ -49,7 +49,7 @@ jobs:
          name: osdoc.tar.gz
          path: osdoc.tar.gz
       
-      - uses: GoogleCloudPlatform/release-please-action@v3
+      - uses: svenstaro/upload-release-action@v2
         id: release
         with:
            token: ${{ secrets.GITHUB_TOKEN }}
