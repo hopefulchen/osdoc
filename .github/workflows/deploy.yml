@@ -47,13 +47,13 @@ jobs:
          name: osdoc.tar.gz
          path: osdoc.tar.gz
       
-      - name: Create Release
+      - name: Create GitHub release
         id: create_release
-        uses: actions/create-release@v1
+        uses: hopefulchen/action-automatic-releases@latest
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-           tag_name: ${{ github.ref }}
+           tag_name: ${{ github.ref }} 
            release_name: Release ${{ github.ref }}
            draft: false
            prerelease: false
