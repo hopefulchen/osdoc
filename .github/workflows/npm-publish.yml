@@ -7,7 +7,7 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/npm-publish.yml'
+      - '.github/workflows/deploy.yml'
       - 'apptest/**'
 
 env:
@@ -64,5 +64,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./${{ env.WORKDIR }}/build
-          cname: 'test-docusaurus.apptest.com'
+          cname: 'localhost:3000'
           allow_empty_commit: true
